@@ -25,7 +25,8 @@ A 30-day trial provides a new tenant with all the required features, including I
 
 > 👉 **Action:** Navigate to the **Microsoft 365 Business Premium** trial page and complete the sign-up process. This creates a new administrator account and a sandbox domain (e.g., `yourcompany.onmicrosoft.com`).
 
-_...insert your screenshot of the completed "You're all set to use Microsoft 365" page here..._
+<img width="1429" height="699" alt="Phase 1 1 Provision a Microsoft 365 Tenant " src="https://github.com/user-attachments/assets/641bbdba-b763-42ce-9f61-d7c8f9582a9c" />
+
 
 ### 1.2 Configure Automatic Enrollment for Windows
 This setting allows any Windows device joined to our Entra ID tenant to be automatically enrolled into Intune.
@@ -36,7 +37,8 @@ This setting allows any Windows device joined to our Entra ID tenant to be autom
 > 3. Select **Automatic Enrollment**.
 > 4. Set the **MDM user scope** to **All** and click **Save**.
 
-_...insert your screenshot showing the MDM user scope set to "All" here..._
+<img width="1882" height="923" alt="Phase 1 2 Configure Automatic Enrollment for Windows " src="https://github.com/user-attachments/assets/51f90fbd-c17e-44f7-a5b0-2a73b71229af" />
+
 
 ---
 
@@ -58,7 +60,9 @@ This policy defines the rules a Windows device must follow to be considered "com
 > 6. Under **Assignments**, click **+ Add all users**.
 > 7. Review and **Create** the policy.
 
-_...insert your screenshot of the completed "System Security" settings for the compliance policy here..._
+<img width="1818" height="877" alt="Phase 2 1 Create the Windows Compliance Policy " src="https://github.com/user-attachments/assets/4595c242-3760-4de5-955f-a9aa1e605017" />
+
+
 
 ### 2.2 Create the Conditional Access Policy
 This is the master rule that enforces our compliance policy.
@@ -73,7 +77,8 @@ This is the master rule that enforces our compliance policy.
 > 7. Under **Access controls > Grant**, select `Require device to be marked as compliant`.
 > 8. **Enable** the policy and click **Create**. *(Note: You may need to disable Security Defaults and exclude your admin account during creation).*
 
-_...insert your screenshot of the completed Conditional Access policy summary screen here..._
+<img width="1882" height="876" alt="Phase 2 2 Create the Conditional Access Policy" src="https://github.com/user-attachments/assets/f82f251a-75a3-4a9a-81d8-3f8742002d00" />
+
 
 ---
 
@@ -89,7 +94,8 @@ A new endpoint was provisioned using Hyper-V to test the configured environment.
 > 4. In the VM settings, enable **Secure Boot** and the **Trusted Platform Module (TPM)**.
 > 5. Set the boot order to prioritize the **DVD Drive** and attach the downloaded ISO file.
 
-_...insert your screenshot of the final Hyper-V settings for the VM here..._
+<img width="738" height="589" alt="Phase 3 1 Create the Virtual Machine in Hyper-V" src="https://github.com/user-attachments/assets/d10a8d69-d96f-49a1-8b68-df965277cbdc" />
+
 
 ### 3.2 Install Windows 11 and Enroll in Intune
 > 👉 **Action:**
@@ -97,7 +103,8 @@ _...insert your screenshot of the final Hyper-V settings for the VM here..._
 > 2. During the setup process (OOBE), select **"Set up for work or school"**.
 > 3. Sign in with your Microsoft 365 tenant administrator credentials. This action joins the device to Entra ID and triggers the automatic Intune enrollment.
 
-_...insert your screenshot of the "Access work or school" settings page inside the completed VM here..._
+<img width="1352" height="822" alt="Phase 3 2 Install Windows 11 and Enroll in INtune " src="https://github.com/user-attachments/assets/56410f28-4fb9-4834-8173-692dfaef5c3a" />
+
 
 ---
 
@@ -111,7 +118,8 @@ The final phase involved testing the policies and resolving a compliance failure
 > 2. Observe that the new VM is listed but has a status of **`Not Compliant`**.
 > 3. Click on the device, then go to **Device compliance** to investigate. The report shows a failure on the **BitLocker** encryption setting.
 
-_...insert your screenshot showing the device as "Not Compliant" in the Intune portal here..._
+<img width="1892" height="931" alt="Phase 4 1 Identify the Compliance Issue " src="https://github.com/user-attachments/assets/ec3e638f-8c99-45b4-a99a-91cd477a36c9" />
+
 
 ### 4.2 Remediate the Policy
 > 👉 **Action:**
@@ -120,7 +128,8 @@ _...insert your screenshot showing the device as "Not Compliant" in the Intune p
 > 3. Change the `Require encryption of data storage on device` setting from `Require` to `Not configured`.
 > 4. **Review + save** the policy changes.
 
-_...insert your screenshot showing the edited encryption setting in the compliance policy here..._
+<img width="1867" height="890" alt="Phase 4 2 Remediate the Policy" src="https://github.com/user-attachments/assets/44c74ea2-510c-435f-9798-28c4252518c3" />
+
 
 ### 4.3 Verify the Final Compliant Status
 > 👉 **Action:**
@@ -129,4 +138,5 @@ _...insert your screenshot showing the edited encryption setting in the complian
 > 3. After a few minutes, refresh the device page in the Intune portal.
 > 4. **Result:** The device status successfully updates to **`Compliant`**, confirming the remediation was successful.
 
-_...insert your screenshot showing the device with a final "Compliant" status in the Intune portal here..._
+<img width="1908" height="926" alt="Phase 4 3 Verify the Final Compliant Status" src="https://github.com/user-attachments/assets/50263003-1995-48dd-b6b7-842367726f71" />
+
